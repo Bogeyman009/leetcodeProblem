@@ -1,0 +1,20 @@
+ vector<bool> kidsWithCandies(vector<int>& c, int eC) {
+        
+        vector<bool> v;
+        int n=c.size();
+        int max=0;
+        for(int i=0;i<n;i++)
+        {
+            if(max < c[i])
+                max=c[i];
+        }
+        for(int i=0; i<n ;i++)
+        {
+            if(eC+c[i] >= max)
+                v.push_back(true);
+            else
+                v.push_back(false);
+        }
+        
+        return v;
+    }
